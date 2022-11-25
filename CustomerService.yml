@@ -1,0 +1,11 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: CustomerService
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: finalProject
