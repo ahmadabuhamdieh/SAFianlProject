@@ -1,0 +1,11 @@
+server:
+  port: 8094
+
+spring:
+  application:
+    name: BorrowingService
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: finalProject
