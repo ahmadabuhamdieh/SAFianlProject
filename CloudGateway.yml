@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: customerModule
+        uri: lb://CustomerService
+        predicates:
+        - Path=/customer/**
+      - id: booksCommandModule
+        uri: lb://BooksCommandService
+        predicates:
+        - Path=/books/**
+      - id: borrowingModule
+        uri: lb://BorrowingService
+        predicates:
+        - Path=/borrowing/**
+      - id: reviewModule
+        uri: lb://ReviewService
+        predicates:
+        - Path=/review/**
+
+server:
+  port: 8095
+
+spring:
+  application:
+    name: CloudGateway
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
