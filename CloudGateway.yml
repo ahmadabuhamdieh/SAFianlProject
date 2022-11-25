@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: CloudGateway
@@ -24,7 +27,4 @@ spring:
           uri: lb://ReviewService
           predicates:
             - Path=/review/**
-
-server:
-  port: 8080
 
