@@ -4,22 +4,26 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: customerModule
-        uri: lb://CustomerService
-        predicates:
-        - Path=/customer/**
-      - id: booksCommandModule
-        uri: lb://BooksCommandService
-        predicates:
-        - Path=/books/**
-      - id: borrowingModule
-        uri: lb://BorrowingService
-        predicates:
-        - Path=/borrowing/**
-      - id: reviewModule
-        uri: lb://ReviewService
-        predicates:
-        - Path=/review/**
+        - id: customerModule
+          uri: lb://CustomerService
+          predicates:
+            - Path=/customer/**
+        - id: booksCommandModule
+          uri: lb://BooksCommandService
+          predicates:
+            - Path=/books/**
+        - id: BooksQueryModule
+          uri: lb://BooksQueryService
+          predicates:
+            - Path=/booksQuery/**
+        - id: borrowingModule
+          uri: lb://BorrowingService
+          predicates:
+            - Path=/borrowing/**
+        - id: reviewModule
+          uri: lb://ReviewService
+          predicates:
+            - Path=/review/**
 
 server:
   port: 8095
@@ -27,7 +31,6 @@ server:
 spring:
   application:
     name: CloudGateway
-
 
 
 eureka:
